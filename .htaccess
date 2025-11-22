@@ -1,0 +1,43 @@
+RewriteEngine On
+
+# Prevent access to db.sqlite
+<Files "db.sqlite">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Prevent access to config.php  
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Allow access to firmware files
+<Files "version.json">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "esp32.bin">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "favicon.ico">
+    Order allow,deny
+    Allow from all
+</Files>
+
+
+# Remove .php extension from URLs
+# Redirect /file.php to /file
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.php [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Handle clean URLs - /file to /file.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Default page - redirect / to /index
+DirectoryIndex index.php
