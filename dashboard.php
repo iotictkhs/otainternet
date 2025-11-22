@@ -381,8 +381,8 @@ $firmwareSize = $firmwareExists ? filesize(FIRMWARE_DIR . 'esp32.bin') : 0;
             <h2>🔗 Static Endpoints Untuk ESP32</h2>
             <div class="endpoint-info">
                 <p><strong>URL GET UNTUK ESP32 :</strong></p>
-                <p>Version Check: <code>http://<?php echo $_SERVER['HTTP_HOST']; ?>/iototainternet/firmware/version.json</code></p>
-                <p>Firmware Download: <code>http://<?php echo $_SERVER['HTTP_HOST']; ?>/iototainternet/firmware/esp32.bin</code></p>
+                <p>Version Check: <code>http://<?php echo $_SERVER['HTTP_HOST']; ?>/ictotahiwing/firmware/version.json</code></p>
+                <p>Firmware Download: <code>http://<?php echo $_SERVER['HTTP_HOST']; ?>/iototahiwing/firmware/esp32.bin</code></p>
             </div>
         </div>
 
